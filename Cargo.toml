@@ -36,6 +36,7 @@ internal-tests = []
 c-tests = ["cc", "internal-tests"] # and ebur128-c, quickcheck, quickcheck_macros, rand but dev-dependencies can't be optional...
 reference-tests = []
 capi = []
+bindgen = []
 
 # Enabling this increases the precision of true-peak calculation slightly, but causes a significant
 # performance-hit in the default build-configuration. To avoid the performance-hit, also enable
