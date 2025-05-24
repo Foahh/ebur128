@@ -38,43 +38,20 @@ mod ebur128;
 pub use self::ebur128::*;
 pub use self::utils::energy_to_loudness;
 
-#[cfg(feature = "internal-tests")]
-pub mod interp;
-#[cfg(not(feature = "internal-tests"))]
 pub(crate) mod interp;
 
-#[cfg(feature = "internal-tests")]
-pub mod true_peak;
-#[cfg(not(feature = "internal-tests"))]
 pub(crate) mod true_peak;
 
-#[cfg(feature = "internal-tests")]
-pub mod history;
-#[cfg(not(feature = "internal-tests"))]
 pub(crate) mod history;
 
 #[allow(clippy::excessive_precision)]
 mod histogram_bins;
 
-#[cfg(feature = "internal-tests")]
-pub mod filter;
-#[cfg(not(feature = "internal-tests"))]
 pub(crate) mod filter;
 
-#[cfg(feature = "internal-tests")]
-pub mod utils;
-#[cfg(not(feature = "internal-tests"))]
 pub(crate) mod utils;
 
-#[cfg(feature = "internal-tests")]
-pub use utils::{Interleaved, Planar, Samples};
-#[cfg(not(feature = "internal-tests"))]
 pub(crate) use utils::{Interleaved, Planar, Samples};
-
-#[cfg(test)]
-pub mod tests {
-    pub use super::utils::tests::Signal;
-}
 
 #[cfg(feature = "capi")]
 #[allow(clippy::missing_safety_doc)]
